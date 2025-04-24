@@ -1,9 +1,10 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import { Engine } from 'tsparticles-engine';
+import { useCallback } from 'react';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import type { Engine } from "tsparticles-engine";
 
 interface WelcomeAnimationProps {
   onAnimationComplete: () => void;
@@ -11,9 +12,10 @@ interface WelcomeAnimationProps {
 
 const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onAnimationComplete }) => {
   const [loading, setLoading] = useState(true);
-  const particlesInit = async (engine: Engine) => {
+  
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
-  };
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {

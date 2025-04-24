@@ -1,16 +1,16 @@
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import { Engine } from 'tsparticles-engine';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import type { Engine } from "tsparticles-engine";
 
 const Hero: React.FC = () => {
-  const particlesInit = async (engine: Engine) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
-  };
+  }, []);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
