@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
       title: "AI-Powered Caretaking API",
       description: "An innovative API solution leveraging artificial intelligence to enhance caregiving services and support systems.",
       technologies: ["Python", "FastAPI", "Machine Learning", "Docker"],
-      image: "https://unsplash.com/photos/a-robot-holding-a-camera-and-a-cell-phone-oxmsjovpTbI",
+      image: "https://drive.google.com/file/d/1Em5tTS0ctl0lja2TMalYEo2IJDk9kzGi/view?usp=sharing",
       github: "#",
       demo: "#"
     },
