@@ -12,28 +12,24 @@ interface Certificate {
 const Certificates: React.FC = () => {
   const certificates: Certificate[] = [
     {
-      title: "Machine Learning Fundamentals",
-      issuer: "NPTEL",
-      date: "September 2023",
-      credential: "NPTEL23ML487"
+      title: "Unsupervised Learning, Recommenders,Reinforcement Learning",
+      issuer: "DeepLearning.AI",
+      date: "March 2025",
     },
     {
       title: "Azure Fundamentals (AZ-900)",
       issuer: "Microsoft",
-      date: "July 2023",
-      credential: "MS-AZ900-8742"
+      date: "April 2025",
     },
     {
-      title: "AWS Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "May 2023",
-      credential: "AWS-CP-2324968"
+      title: "Libraries and Frameworks for Frontend Development",
+      issuer: "Board Infinity",
+      date: "March 2025",
     },
     {
-      title: "Python Programming",
-      issuer: "Coursera",
-      date: "February 2023",
-      credential: "CRSRA-PY-6574891"
+      title: "Cyber Security and Privacy",
+      issuer: "NPTEL",
+      date: "October 2024",
     }
   ];
 
