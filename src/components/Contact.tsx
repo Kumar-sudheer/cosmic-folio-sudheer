@@ -44,20 +44,20 @@ const Contact: React.FC = () => {
     {
       platform: "GitHub",
       icon: <Github className="h-5 w-5" />,
-      url: "https://github.com/sudheerkumar",
-      username: "@sudheerkumar"
+      url: "https://github.com/Kumar-sudheer",
+      username: "Kumar-sudheer"
     },
     {
       platform: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
-      url: "https://linkedin.com/in/sudheerkumar",
+      url: "https://www.linkedin.com/in/sudheer-kumar-149b6524a",
       username: "Sudheer Kumar"
     },
     {
       platform: "Email",
       icon: <Mail className="h-5 w-5" />,
-      url: "mailto:sudheer@example.com",
-      username: "sudheer@example.com"
+      url: "mailto:kumarsudheer0812@gmail.com",
+      username: "kumarsudheer0812@gmail.com"
     }
   ];
 
