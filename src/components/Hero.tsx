@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
             className="mb-8"
           >
             <p className="text-xl md:text-2xl text-gray-700">
-              Aspiring Software Engineer | Cloud Enthusiast
+              Aspiring Web Developer | Cloud Enthusiast
             </p>
           </motion.div>
           <motion.div
