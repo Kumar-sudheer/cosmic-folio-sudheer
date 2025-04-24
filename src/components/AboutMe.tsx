@@ -96,7 +96,7 @@ const AboutMe: React.FC = () => {
                       <h4 className="text-lg font-semibold mb-1">Education</h4>
                       <p className="text-gray-700 mb-2">Computer Science & Engineering</p>
                       <p className="text-sm text-gray-500">Lovely Professional University (LPU)</p>
-                      <p className="text-sm text-gray-500">2021 - Present</p>
+                      <p className="text-sm text-gray-500">2022 - Present</p>
                     </div>
                   </div>
                 </CardContent>
@@ -113,7 +113,7 @@ const AboutMe: React.FC = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-1">Previous Education</h4>
                       <p className="text-gray-700 mb-2">Stepping Stone Inter College</p>
-                      <p className="text-sm text-gray-500">Intermediate • 2019-2021</p>
+                      <p className="text-sm text-gray-500">Intermediate • 2020-2022</p>
                     </div>
                   </div>
                 </CardContent>
