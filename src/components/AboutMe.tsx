@@ -133,6 +133,7 @@ const AboutMe: React.FC = () => {
                         <li>Problem Solving</li>
                         <li>Communication</li>
                         <li>Teamwork</li>
+                        <li>Good Listener</li>
                         <li>Adaptability</li>
                       </ul>
                     </div>
