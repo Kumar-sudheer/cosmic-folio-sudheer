@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCallback } from 'react';
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 import type { Engine } from "tsparticles-engine";
 
 interface WelcomeAnimationProps {
@@ -14,7 +14,7 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onAnimationComplete
   const [loading, setLoading] = useState(true);
   
   const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
 
   useEffect(() => {
