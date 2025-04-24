@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { User, Briefcase, BookOpen } from 'lucide-react';
+import ProfileImage from './ProfileImage';
 
 const AboutMe: React.FC = () => {
   const containerVariants = {
@@ -51,6 +51,11 @@ const AboutMe: React.FC = () => {
             variants={containerVariants}
             className="md:col-span-7"
           >
+            <div className="flex flex-col items-center md:items-start mb-8">
+              <motion.div variants={itemVariants}>
+                <ProfileImage />
+              </motion.div>
+            </div>
             <motion.h4 variants={itemVariants} className="text-2xl font-bold mb-4">Who am I?</motion.h4>
             <motion.p variants={itemVariants} className="text-gray-700 mb-4">
               I am a Computer Science and Engineering undergraduate student with a passion for building innovative software solutions
