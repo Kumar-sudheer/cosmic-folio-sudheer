@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -16,6 +15,14 @@ interface Project {
 
 const Projects: React.FC = () => {
   const projects: Project[] = [
+    {
+      title: "AI-Powered Caretaking API",
+      description: "An innovative API solution leveraging artificial intelligence to enhance caregiving services and support systems.",
+      technologies: ["Python", "FastAPI", "Machine Learning", "Docker"],
+      image: "/lovable-uploads/27c4a339-ab38-49e5-861c-91033a280161.png",
+      github: "#",
+      demo: "#"
+    },
     {
       title: "Personal Finance Tracker",
       description: "A web application for tracking personal expenses, creating budgets, and visualizing spending patterns.",
