@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact: React.FC = () => {
@@ -58,6 +58,12 @@ const Contact: React.FC = () => {
       icon: <Mail className="h-5 w-5" />,
       url: "mailto:kumarsudheer0812@gmail.com",
       username: "kumarsudheer0812@gmail.com"
+    },
+    {
+      platform: "Phone",
+      icon: <Phone className="h-5 w-5" />,
+      url: "tel:+916388852649",
+      username: "+91-6388852649"
     }
   ];
 
