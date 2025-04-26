@@ -125,3 +125,8 @@
   content: "";
   @apply absolute left-0 h-4 w-4 rounded-full bg-cosmic-purple -ml-5 mt-1.5;
 }
+iframe[src*="lovable.dev"] {
+  display: none !important;
+}
+
+
