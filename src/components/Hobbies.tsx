@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Camera, Book, Gamepad, Music } from 'lucide-react';
+import { Camera, Book, Gamepad, Music, Dumbbell, Guitar, Compose } from 'lucide-react';
 
 interface Hobby {
   name: string;
@@ -32,6 +32,21 @@ const Hobbies: React.FC = () => {
       name: "Lyricist",
       icon: <Music className="h-8 w-8 text-cosmic-purple" />,
       description: "Crafting melodious words"
+    },
+    {
+      name: "Gym",
+      icon: <Dumbbell className="h-8 w-8 text-cosmic-blue" />,
+      description: "Staying fit and healthy"
+    },
+    {
+      name: "Music",
+      icon: <Guitar className="h-8 w-8 text-cosmic-pink" />,
+      description: "Playing and enjoying melodies"
+    },
+    {
+      name: "Composing",
+      icon: <Compose className="h-8 w-8 text-cosmic-purple" />,
+      description: "Creating original music and lyrics"
     }
   ];
 
