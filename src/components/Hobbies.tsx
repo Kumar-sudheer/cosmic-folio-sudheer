@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Camera, Book, Gamepad, Music, Dumbbell, Guitar, Compose } from 'lucide-react';
+import { Camera, Book, Gamepad, Music, Dumbbell, Guitar, Pen } from 'lucide-react';
 
 interface Hobby {
   name: string;
@@ -45,7 +45,7 @@ const Hobbies: React.FC = () => {
     },
     {
       name: "Composing",
-      icon: <Compose className="h-8 w-8 text-cosmic-purple" />,
+      icon: <Pen className="h-8 w-8 text-cosmic-purple" />,
       description: "Creating original music and lyrics"
     }
   ];
