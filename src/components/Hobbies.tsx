@@ -7,6 +7,7 @@ interface Hobby {
   name: string;
   icon: React.ReactNode;
   description: string;
+  color: string;
 }
 
 const Hobbies: React.FC = () => {
@@ -15,38 +16,45 @@ const Hobbies: React.FC = () => {
   const hobbies: Hobby[] = [
     {
       name: "Photography",
-      icon: <Camera className="h-8 w-8 text-cosmic-purple" />,
-      description: "Capturing moments through the lens"
+      icon: <Camera className="h-8 w-8" />,
+      description: "Capturing moments through the lens",
+      color: "from-purple-500 to-blue-500"
     },
     {
       name: "Poetry",
-      icon: <Book className="h-8 w-8 text-cosmic-blue" />,
-      description: "Expressing emotions through words"
+      icon: <Book className="h-8 w-8" />,
+      description: "Expressing emotions through words",
+      color: "from-blue-500 to-cyan-500"
     },
     {
       name: "Gaming",
-      icon: <Gamepad className="h-8 w-8 text-cosmic-pink" />,
-      description: "Exploring virtual worlds"
+      icon: <Gamepad className="h-8 w-8" />,
+      description: "Exploring virtual worlds",
+      color: "from-green-500 to-emerald-500"
     },
     {
       name: "Lyricist",
-      icon: <Music className="h-8 w-8 text-cosmic-purple" />,
-      description: "Crafting melodious words"
+      icon: <Music className="h-8 w-8" />,
+      description: "Crafting melodious words",
+      color: "from-pink-500 to-rose-500"
     },
     {
       name: "Gym",
-      icon: <Dumbbell className="h-8 w-8 text-cosmic-blue" />,
-      description: "Staying fit and healthy"
+      icon: <Dumbbell className="h-8 w-8" />,
+      description: "Staying fit and healthy",
+      color: "from-red-500 to-orange-500"
     },
     {
       name: "Music",
-      icon: <Guitar className="h-8 w-8 text-cosmic-pink" />,
-      description: "Playing and enjoying melodies"
+      icon: <Guitar className="h-8 w-8" />,
+      description: "Playing and enjoying melodies",
+      color: "from-yellow-500 to-amber-500"
     },
     {
       name: "Composing",
-      icon: <Pen className="h-8 w-8 text-cosmic-purple" />,
-      description: "Creating original music and lyrics"
+      icon: <Pen className="h-8 w-8" />,
+      description: "Creating original music and lyrics",
+      color: "from-indigo-500 to-violet-500"
     }
   ];
 
@@ -60,6 +68,8 @@ const Hobbies: React.FC = () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             orbitElement.classList.add('animate-cosmic-spin');
+          } else {
+            orbitElement.classList.remove('animate-cosmic-spin');
           }
         });
       },
@@ -93,7 +103,7 @@ const Hobbies: React.FC = () => {
   };
 
   return (
-    <section id="hobbies" className="section-padding overflow-hidden">
+    <section id="hobbies" className="section-padding min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-cosmic-light">
       <div className="container mx-auto">
         <motion.div
           initial="hidden"
@@ -111,18 +121,18 @@ const Hobbies: React.FC = () => {
           <motion.div variants={itemVariants} className="w-20 h-1 bg-gradient-to-r from-cosmic-blue to-cosmic-purple mx-auto"></motion.div>
         </motion.div>
 
-        <div className="relative h-[500px] md:h-[600px] flex items-center justify-center">
+        <div className="relative h-[500px] md:h-[700px] flex items-center justify-center">
           {/* Sun in the center */}
-          <div className="absolute w-24 h-24 rounded-full bg-gradient-to-r from-cosmic-blue to-cosmic-purple flex items-center justify-center z-10">
-            <span className="text-white font-bold">Hobbies</span>
+          <div className="absolute w-32 h-32 rounded-full bg-gradient-to-r from-cosmic-blue via-cosmic-purple to-cosmic-pink flex items-center justify-center z-10 shadow-lg shadow-cosmic-purple/30 animate-pulse-slow">
+            <span className="text-white font-bold text-xl">My<br/>Hobbies</span>
           </div>
           
           {/* Orbit path */}
-          <div ref={orbitRef} className="absolute w-[80%] h-[80%] rounded-full border border-dashed border-cosmic-purple/30 flex items-center justify-center transition-transform duration-1000">
+          <div ref={orbitRef} className="absolute w-[90%] h-[90%] rounded-full border-2 border-dashed border-cosmic-purple/50 flex items-center justify-center transition-transform duration-1000">
             {/* Planets (hobbies) */}
             {hobbies.map((hobby, index) => {
               const angle = (360 / hobbies.length) * index;
-              const orbitRadius = Math.min(window.innerWidth * 0.3, 250); // Responsive radius
+              const orbitRadius = Math.min(window.innerWidth * 0.35, 300); // Responsive radius
               
               return (
                 <motion.div
@@ -135,19 +145,30 @@ const Hobbies: React.FC = () => {
                     transform: `rotate(${angle}deg) translateX(${orbitRadius}px) rotate(-${angle}deg)`,
                   }}
                 >
-                  <div className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center cursor-pointer">
-                    <div className="bg-cosmic-purple/10 p-2 rounded-full mb-1">
-                      {hobby.icon}
+                  <div className="relative group">
+                    <div className={`bg-gradient-to-br ${hobby.color} p-6 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500 w-24 h-24 md:w-28 md:h-28 flex flex-col items-center justify-center cursor-pointer`}>
+                      <div className="text-white">
+                        {React.cloneElement(hobby.icon as React.ReactElement, { className: 'h-10 w-10 text-white' })}
+                      </div>
+                      <h4 className="text-xs font-medium text-center text-white mt-2">{hobby.name}</h4>
                     </div>
-                    <h4 className="text-xs font-medium text-center">{hobby.name}</h4>
-                    <div className="opacity-0 hover:opacity-100 absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white p-2 rounded shadow-md text-xs w-32 text-center pointer-events-none transition-opacity duration-300">
-                      {hobby.description}
+                    <div className="opacity-0 group-hover:opacity-100 absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white p-3 rounded-lg shadow-lg text-sm w-48 text-center transition-all duration-300 z-20">
+                      <p className="font-medium text-gray-800">{hobby.name}</p>
+                      <p className="text-gray-600">{hobby.description}</p>
+                    </div>
+                    
+                    {/* Connection line */}
+                    <div className="absolute top-1/2 left-1/2 w-[300px] h-0.5 bg-gradient-to-r from-transparent via-cosmic-purple/30 to-transparent origin-left -z-10"
+                         style={{ transform: `rotate(${180 + angle}deg)` }}>
                     </div>
                   </div>
                 </motion.div>
               );
             })}
           </div>
+          
+          {/* Inner glow effect */}
+          <div className="absolute w-[80%] h-[80%] rounded-full bg-cosmic-light/30 blur-3xl -z-10"></div>
         </div>
       </div>
     </section>
