@@ -7,6 +7,7 @@ import AboutMe from '@/components/AboutMe';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Certificates from '@/components/Certificates';
+import Hobbies from '@/components/Hobbies';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -21,6 +22,7 @@ const Index = () => {
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'certificates', label: 'Certificates' },
+    { id: 'hobbies', label: 'Hobbies' },
     { id: 'contact', label: 'Contact' }
   ];
   
@@ -59,6 +61,7 @@ const Index = () => {
               <Skills />
               <Projects />
               <Certificates />
+              <Hobbies />
               <Contact />
               <Footer />
             </main>
