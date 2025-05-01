@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
               View My Work
             </Button>
             <a
-              href="/Sudheer_CV_PES.docx"
+              href="/Sudheer_CV_Specialized.docx"
               download="Sudheer_Kumar_Resume.docx"
               className="border border-cosmic-purple text-cosmic-purple hover:bg-cosmic-purple/10 px-6 py-2 rounded-lg text-center"
              >
