@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Card } from '@/components/ui/card';
 
 interface Certificate {
   title: string;
@@ -76,16 +77,23 @@ const Certificates: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
-          className="max-w-3xl mx-auto"
+          className="max-w-4xl mx-auto relative"
         >
-          <div className="timeline-container">
-            {certificates.map((certificate, index) => (
-              <motion.div 
-                key={certificate.title} 
-                className="timeline-item"
-                variants={itemVariants}
-              >
-                <div className="bg-white p-6 rounded-lg shadow-md ml-8">
+          {/* Vertical timeline line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cosmic-blue to-cosmic-purple"></div>
+          
+          {certificates.map((certificate, index) => (
+            <motion.div 
+              key={certificate.title} 
+              variants={itemVariants}
+              className={`flex mb-16 items-center relative ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-cosmic-purple z-10 shadow-lg"></div>
+              
+              {/* Content card with different positioning based on index */}
+              <div className={`w-5/12 ${index % 2 === 0 ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}>
+                <Card className="p-6 hover:shadow-lg transition-shadow duration-300 border-cosmic-purple/20">
                   <h4 className="text-lg font-semibold mb-1">{certificate.title}</h4>
                   <p className="text-cosmic-purple font-medium">{certificate.issuer}</p>
                   <div className="flex justify-between items-center mt-2">
@@ -96,10 +104,10 @@ const Certificates: React.FC = () => {
                       </span>
                     )}
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </Card>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
